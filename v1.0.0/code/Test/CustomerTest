@@ -1,0 +1,36 @@
+import static org.junit.Assert.*;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class CustomerTest {
+	
+	Customer cust1 = new Customer("Homero","Simpson","0742");
+	Customer cust2 = new Customer("Montgomery","Burns","0001");
+	Customer cust3 = new Customer("Ned","Flanders","1234");
+	
+	
+	@Test
+	public void testGetName() {
+		assertEquals("error", "Homero", cust1.getName());
+		assertEquals("error", "Montgomery", cust2.getName());
+		assertEquals("error", "Ned", cust3.getName());
+	}
+
+	@Test
+	public void testGetSurname() {
+		assertEquals("error", "0742", cust1.getAccountID());
+		assertEquals("error", "0001", cust2.getAccountID());
+		assertEquals("error", "1234", cust3.getAccountID());
+	}
+		
+	
+	@Test
+	public void testGetPIN() {
+		assertEquals("error","3345",cust1.getPIN());
+		assertEquals("error","3345",cust2.getPIN());
+		assertEquals("error","4533",cust2.getPIN());
+	}
+	
+}
