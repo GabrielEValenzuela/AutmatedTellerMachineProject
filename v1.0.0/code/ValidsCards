@@ -1,0 +1,5 @@
+public enum ValidsCards {
+	C1521854,
+	C4253773,
+	C7126994;
+}
