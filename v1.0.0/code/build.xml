@@ -3,10 +3,9 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="ATM">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="NewATMSoft">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../../eclipse/java-oxygen/eclipse/"/>
-    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
@@ -14,30 +13,30 @@
         <pathelement location="../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
         <pathelement location="../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
-    <path id="ATM.classpath">
-        <pathelement location="."/>
+    <path id="NewATMSoft.classpath">
+        <pathelement location="bin"/>
         <path refid="JUnit 4.libraryclasspath"/>
     </path>
     <target name="init">
-        <copy includeemptydirs="false" todir=".">
-            <fileset dir=".">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
     </target>
     <target name="clean">
-        <delete>
-            <fileset dir="." includes="**/*.class"/>
-        </delete>
+        <delete dir="bin"/>
     </target>
     <target depends="clean" name="cleanall"/>
     <target depends="build-subprojects,build-project" name="build"/>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="." includeantruntime="false" source="${source}" target="${target}">
-            <src path="."/>
-            <classpath refid="ATM.classpath"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="NewATMSoft.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -54,31 +53,9 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="ATMModelTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="ATMModelTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="ATM.classpath"/>
-        </junit>
-    </target>
-    <target name="CardTest (1)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="CardTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="ATM.classpath"/>
-        </junit>
-    </target>
-    <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
-                <include name="TEST-*.xml"/>
-            </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>
+    <target name="main">
+        <java classname="main" failonerror="true" fork="yes">
+            <classpath refid="NewATMSoft.classpath"/>
+        </java>
     </target>
 </project>
-
