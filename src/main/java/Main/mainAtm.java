@@ -5,6 +5,8 @@
  */
 package Main;
 
+import dataBasePackage.model.AtmModel;
+
 /**
  *
  * @author gabriel
@@ -12,6 +14,9 @@ package Main;
 public class mainAtm {
     
     public static void main(String[] args) {
+        
+        AtmModel model = new AtmModel();
+        model.makeDeposit(300, 11);
         
     }
     
