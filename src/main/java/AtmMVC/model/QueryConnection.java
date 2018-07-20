@@ -32,7 +32,7 @@ public class QueryConnection extends DataBaseConnection {
                 customer.setEmail(result.getString("email"));
                 customer.setBalance(result.getFloat("balance"));
                 customer.setDoubleCheck(result.getBoolean("doubleCheck"));
-                customer.setPIN(Integer.parseInt(result.getString("PIN")));
+                customer.setPIN(result.getString("PIN"));
                 customer.setCustomerId(result.getInt("customerId"));
             }
             return true;
@@ -76,6 +76,7 @@ public class QueryConnection extends DataBaseConnection {
     public void updateBalance(float amount, Customer customer) {
         float buffer = amount + customer.getBalance();
         String query = "UPDATE customerTable SET balance= ? WHERE customerId=" + customer.getCustomerId();
+        customer.setBalance(buffer);
         Connection connection = getConnection();
         PreparedStatement statement = null;
 

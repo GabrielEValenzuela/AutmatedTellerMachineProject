@@ -5,18 +5,19 @@
  */
 package AtmMVC.model;
 
+
 /**
  *
  * @author gabriel
  */
-public class Customer {
+public class Customer implements Observer{
     
     private int customerId;
     private String firstName;
     private String lastName;
     private String email;
     private float balance;
-    private int PIN;
+    private String PIN;
     private boolean doubleCheck;
 
     public int getCustomerId() {
@@ -59,11 +60,11 @@ public class Customer {
         this.balance = balance;
     }
 
-    public int getPIN() {
+    public String getPIN() {
         return PIN;
     }
 
-    public void setPIN(int PIN) {
+    public void setPIN(String PIN) {
         this.PIN = PIN;
     }
 
@@ -73,6 +74,11 @@ public class Customer {
 
     public void setDoubleCheck(boolean doubleCheck) {
         this.doubleCheck = doubleCheck;
+    }
+
+    @Override
+    public void update(float update) {
+        this.balance = update;
     }
     
     

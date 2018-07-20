@@ -5,11 +5,15 @@
  */
 package AtmMVC.model;
 
+import java.util.Observer;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+
 /**
  *
  * @author gabriel
  */
-public class Card {
+public class Card implements Observer {
     
     private int cardId;
     private String bankAssociated;
@@ -46,6 +50,11 @@ public class Card {
 
     public void setCurrentStatus(boolean currentStatus) {
         this.currentStatus = currentStatus;
+    }
+
+    @Override
+    public void update(java.util.Observable o, Object arg) {
+        
     }
     
     
