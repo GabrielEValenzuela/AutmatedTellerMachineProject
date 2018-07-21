@@ -5,19 +5,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
-        <file>file:/home/gabriel/NetBeansProjects/ISWProject/src/main/java/dataBasePackage/controler/Controller.java</file>
-        <file>file:/home/gabriel/NetBeansProjects/ISWProject/src/main/java/Main/mainAtm.java</file>
+        <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/ISWProject/src/main/java/AtmMVC/model/DataBaseConnection.java</file>
+        <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/ISWProject/src/main/java/AtmMVC/controler/ControlerInterface.java</file>
+        <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/ISWProject/src/main/java/AtmMVC/controler/ControlerPin.java</file>
+        <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/ISWProject/src/main/java/AtmMVC/view/PinWindow.java</file>
+        <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/ISWProject/src/main/java/Main/mainAtm.java</file>
+        <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/ISWProject/src/main/java/AtmMVC/controler/ControlerLogin.java</file>
+        <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/ISWProject/src/main/java/AtmMVC/view/OperationalWindow.java</file>
+        <file>file:/C:/Users/Gabriel/Documents/NetBeansProjects/ISWProject/src/main/java/AtmMVC/controler/ControlerOperational.java</file>
       </group>
     </open-files>
     <editor-bookmarks lastBookmarkId="0" xmlns="http://www.netbeans.org/ns/editor-bookmarks/2"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-      <group>
-        <file>file:/home/gabriel/NetBeansProjects/ISWProject/src/main/java/dataBasePackage/model/Card.java</file>
-        <file>file:/home/gabriel/NetBeansProjects/ISWProject/src/main/java/dataBasePackage/model/Customer.java</file>
-        <file>file:/home/gabriel/NetBeansProjects/ISWProject/src/main/java/dataBasePackage/model/AtmModel.java</file>
-        <file>file:/home/gabriel/NetBeansProjects/ISWProject/src/main/java/Main/mainAtm.java</file>
-        <file>file:/home/gabriel/NetBeansProjects/ISWProject/src/main/java/dataBasePackage/model/QueryConnection.java</file>
-      </group>
-    </open-files>
   </auxiliary>
 </gradle-project-properties>

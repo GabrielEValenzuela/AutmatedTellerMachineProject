@@ -9,7 +9,7 @@ package AtmMVC.model;
  *
  * @author gabriel
  */
-public class ATM  implements Observer{
+public class ATM{
     
     private int id;
     private float selfBalance;
@@ -46,12 +46,6 @@ public class ATM  implements Observer{
 
     public void setEnable(boolean enable) {
         this.enable = enable;
-    }
-
-    @Override
-    public void update(float update) {
-        this.selfBalance = update;
-    }
-    
+    }   
     
 }

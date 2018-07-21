@@ -34,9 +34,9 @@ public class TransferJDialog extends javax.swing.JDialog {
         jPanel3 = new javax.swing.JPanel();
         jPaneSearch1 = new javax.swing.JPanel();
         search6 = new javax.swing.JLabel();
-        jTxtSearch1 = new javax.swing.JTextField();
+        jtxtAmount = new javax.swing.JTextField();
         jlblTransfer = new javax.swing.JLabel();
-        jbtnAcept1 = new javax.swing.JButton();
+        jbtnAceptTransfer = new javax.swing.JButton();
         jbtnAcept3 = new javax.swing.JButton();
         jPnlKeyboard = new javax.swing.JPanel();
         keytrasnfer00 = new javax.swing.JButton();
@@ -58,10 +58,10 @@ public class TransferJDialog extends javax.swing.JDialog {
 
         jlblTransfer.setBorder(javax.swing.BorderFactory.createTitledBorder("Comisión"));
 
-        jbtnAcept1.setText("Aceptar");
-        jbtnAcept1.addActionListener(new java.awt.event.ActionListener() {
+        jbtnAceptTransfer.setText("Aceptar");
+        jbtnAceptTransfer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnAcept1ActionPerformed(evt);
+                jbtnAceptTransferActionPerformed(evt);
             }
         });
 
@@ -83,9 +83,9 @@ public class TransferJDialog extends javax.swing.JDialog {
                     .addGroup(jPaneSearch1Layout.createSequentialGroup()
                         .addComponent(search6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTxtSearch1))
+                        .addComponent(jtxtAmount))
                     .addGroup(jPaneSearch1Layout.createSequentialGroup()
-                        .addComponent(jbtnAcept1)
+                        .addComponent(jbtnAceptTransfer)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jbtnAcept3)
                         .addGap(0, 38, Short.MAX_VALUE)))
@@ -97,12 +97,12 @@ public class TransferJDialog extends javax.swing.JDialog {
                 .addContainerGap(56, Short.MAX_VALUE)
                 .addGroup(jPaneSearch1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(search6)
-                    .addComponent(jTxtSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlblTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPaneSearch1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtnAcept1)
+                    .addComponent(jbtnAceptTransfer)
                     .addComponent(jbtnAcept3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -272,91 +272,54 @@ public class TransferJDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnAcept1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAcept1ActionPerformed
+    private void jbtnAceptTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAceptTransferActionPerformed
     this.dispose();
-    }//GEN-LAST:event_jbtnAcept1ActionPerformed
+    }//GEN-LAST:event_jbtnAceptTransferActionPerformed
 
     private void jbtnAcept3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAcept3ActionPerformed
-        jTxtSearch1.setText("");
+        jtxtAmount.setText("");
     }//GEN-LAST:event_jbtnAcept3ActionPerformed
 
     private void keytrasnfer00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytrasnfer00ActionPerformed
-        keyboard('0', jTxtSearch1);
+        keyboard('0', jtxtAmount);
     }//GEN-LAST:event_keytrasnfer00ActionPerformed
 
     private void keytransfer03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer03ActionPerformed
-        keyboard('3', jTxtSearch1);
+        keyboard('3', jtxtAmount);
     }//GEN-LAST:event_keytransfer03ActionPerformed
 
     private void keytransfer01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer01ActionPerformed
-        keyboard('1', jTxtSearch1);
+        keyboard('1', jtxtAmount);
     }//GEN-LAST:event_keytransfer01ActionPerformed
 
     private void keytransfer02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer02ActionPerformed
-        keyboard('2', jTxtSearch1);
+        keyboard('2', jtxtAmount);
     }//GEN-LAST:event_keytransfer02ActionPerformed
 
     private void keytransfer09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer09ActionPerformed
-        keyboard('9', jTxtSearch1);
+        keyboard('9', jtxtAmount);
     }//GEN-LAST:event_keytransfer09ActionPerformed
 
     private void keytransfer06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer06ActionPerformed
-        keyboard('6', jTxtSearch1);
+        keyboard('6', jtxtAmount);
     }//GEN-LAST:event_keytransfer06ActionPerformed
 
     private void keytransfer05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer05ActionPerformed
-        keyboard('5', jTxtSearch1);
+        keyboard('5', jtxtAmount);
     }//GEN-LAST:event_keytransfer05ActionPerformed
 
     private void keytransfer08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer08ActionPerformed
-        keyboard('8', jTxtSearch1);
+        keyboard('8', jtxtAmount);
     }//GEN-LAST:event_keytransfer08ActionPerformed
 
     private void keytransfer04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer04ActionPerformed
-        keyboard('4', jTxtSearch1);
+        keyboard('4', jtxtAmount);
     }//GEN-LAST:event_keytransfer04ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TransferJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TransferJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TransferJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TransferJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                TransferJDialog dialog = new TransferJDialog(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+    public void clearFields(){
+        jtxtAmount.setText(null);
     }
+    
     private void keyboard(char input, JTextField text){
             StringBuilder str = new StringBuilder();
             str.append(text.getText());
@@ -367,10 +330,10 @@ public class TransferJDialog extends javax.swing.JDialog {
     private javax.swing.JPanel jPaneSearch1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPnlKeyboard;
-    private javax.swing.JTextField jTxtSearch1;
-    private javax.swing.JButton jbtnAcept1;
     private javax.swing.JButton jbtnAcept3;
-    private javax.swing.JLabel jlblTransfer;
+    public javax.swing.JButton jbtnAceptTransfer;
+    public javax.swing.JLabel jlblTransfer;
+    public javax.swing.JTextField jtxtAmount;
     private javax.swing.JButton keytransfer01;
     private javax.swing.JButton keytransfer02;
     private javax.swing.JButton keytransfer03;

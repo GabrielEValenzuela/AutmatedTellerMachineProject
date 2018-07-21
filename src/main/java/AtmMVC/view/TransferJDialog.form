@@ -90,10 +90,10 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="search6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTxtSearch1" max="32767" attributes="0"/>
+                              <Component id="jtxtAmount" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jbtnAcept1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jbtnAceptTransfer" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jbtnAcept3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="38" max="32767" attributes="0"/>
@@ -109,13 +109,13 @@
                       <EmptySpace pref="56" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="search6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTxtSearch1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtAmount" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jlblTransfer" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jbtnAcept1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtnAceptTransfer" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jbtnAcept3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -129,7 +129,10 @@
                 <Property name="text" type="java.lang.String" value="Monto $:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTxtSearch1">
+            <Component class="javax.swing.JTextField" name="jtxtAmount">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jlblTransfer">
               <Properties>
@@ -139,14 +142,20 @@
                   </Border>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="jbtnAcept1">
+            <Component class="javax.swing.JButton" name="jbtnAceptTransfer">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Aceptar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnAcept1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnAceptTransferActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jbtnAcept3">
               <Properties>

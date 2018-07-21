@@ -11,6 +11,6 @@ package AtmMVC.model;
  */
 public interface Observer {
     
-    public void update(float update);
+    public void update();
     
 }

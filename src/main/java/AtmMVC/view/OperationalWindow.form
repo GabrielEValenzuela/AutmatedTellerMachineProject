@@ -29,11 +29,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jTabbedPane1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="jlblGreetins" min="-2" pref="170" max="-2" attributes="0"/>
+                      <Component id="jlbGreetins" min="-2" pref="170" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jlblBalance" min="-2" pref="115" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jbtnExit" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnExitOp" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -45,11 +45,11 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jbtnExit" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnExitOp" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jlblBalance" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jlblGreetins" max="32767" attributes="0"/>
+                          <Component id="jlbGreetins" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -62,7 +62,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jlblGreetins">
+    <Component class="javax.swing.JLabel" name="jlbGreetins">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="14" style="2"/>
@@ -74,6 +74,9 @@
           </Border>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jlblBalance">
       <Properties>
@@ -81,13 +84,15 @@
           <Font name="Arial" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="$1000"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder title="Tu saldo actual es:"/>
           </Border>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
 
@@ -116,7 +121,7 @@
                                       <Component id="textHelp2" alignment="1" min="-2" pref="235" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jlblCounter" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <Component id="jlblDepositView" min="-2" pref="120" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jbtnDepositConfirm" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -151,7 +156,7 @@
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="textHelp3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jlblCounter" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblDepositView" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -179,20 +184,25 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnDepositConfirmActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jlblCounter">
+            <Component class="javax.swing.JLabel" name="jlblDepositView">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="14" style="2"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="$....."/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Dinero ingresado:"/>
+                    <TitledBorder title="Dinero ingresado ($)"/>
                   </Border>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="textHelp1">
               <Properties>
@@ -269,7 +279,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTxtFInput" min="-2" pref="127" max="-2" attributes="0"/>
+                              <Component id="jtxtExtraction" min="-2" pref="127" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
@@ -328,7 +338,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel1" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                              <Component id="jTxtFInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtxtExtraction" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
@@ -421,6 +431,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="7"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtn7ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jbtn8">
               <Properties>
@@ -453,6 +466,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnConfirmExtractionActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jbtnClearExtraction">
               <Properties>
@@ -474,6 +490,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnExtractionAllActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
@@ -485,7 +504,10 @@
                 <Property name="text" type="java.lang.String" value="hasta un l&#xed;mite de $10000.00."/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTxtFInput">
+            <Component class="javax.swing.JTextField" name="jtxtExtraction">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -537,16 +559,16 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="search6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTxtSearch1" max="32767" attributes="0"/>
+                                  <Component id="jTxtSearch" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="search4" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="search5" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jbtnAcept1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jbtnAceptClient" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jbtnAcept3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jbtnClearTransfer" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -566,14 +588,14 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="search6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTxtSearch1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTxtSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jlblTransfer" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jbtnAcept1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jbtnAcept3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jbtnAceptClient" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jbtnClearTransfer" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -596,7 +618,10 @@
                     <Property name="text" type="java.lang.String" value="Cuenta:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTxtSearch1">
+                <Component class="javax.swing.JTextField" name="jTxtSearch">
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jlblTransfer">
                   <Properties>
@@ -606,21 +631,27 @@
                       </Border>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="jbtnAcept1">
+                <Component class="javax.swing.JButton" name="jbtnAceptClient">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnAcept1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnAceptClientActionPerformed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="jbtnAcept3">
+                <Component class="javax.swing.JButton" name="jbtnClearTransfer">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Borrar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnAcept3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnClearTransferActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -827,6 +858,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cambiar PIN"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
@@ -837,6 +871,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Habilitar"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -893,33 +930,45 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Imprimir &#xfa;ltimos movimientos"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jbtnPrint2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Imprimir comprobante"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jbtnPrint3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Imprimir resumen de sueldo"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="jbtnPrint4">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver &#xfa;ltimos movimientos"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jbtnExit">
+    <Component class="javax.swing.JButton" name="btnExitOp">
       <Properties>
         <Property name="text" type="java.lang.String" value="Finalizar"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnExitActionPerformed"/>
-      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

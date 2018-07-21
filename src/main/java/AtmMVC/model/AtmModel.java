@@ -15,16 +15,13 @@ import java.util.ArrayList;
  *
  * @author gabriel
  */
-public class AtmModel implements Subject {
+public class AtmModel {
     
     private QueryConnection dbcon;
     private PreparedStatement statement = null;
     private ResultSet result = null;
-    private Observer o;
-    private ArrayList<Observer> observers;
     
     public AtmModel() {
-        observers = new ArrayList<Observer>();
     }
     
     public void makeTransferPayment(float amount, Customer customerOrigin, Customer customerTarget, QueryConnection con, ATM atm) throws IllegalBalanceException {
@@ -59,22 +56,5 @@ public class AtmModel implements Subject {
     
     public boolean isValid(Card card){
         return card.isCurrentStatus();
-    }
-    
-    @Override
-    public void notifyAllObservers(float update) {
-        for (Observer ob : observers) {
-            o.update(update);
-        }
-    }
-    
-    @Override
-    public void registerObserver(java.util.Observer o) {
-        observers.add((Observer) o);
-    }
-    
-    @Override
-    public void removeObserver(java.util.Observer o) {
-        observers.remove(o);
     }
 }

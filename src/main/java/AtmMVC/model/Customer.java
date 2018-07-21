@@ -77,8 +77,8 @@ public class Customer implements Observer{
     }
 
     @Override
-    public void update(float update) {
-        this.balance = update;
+    public void update() {
+        
     }
     
     

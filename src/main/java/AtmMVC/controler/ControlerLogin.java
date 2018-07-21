@@ -5,9 +5,11 @@
  */
 package AtmMVC.controler;
 
+import AtmMVC.model.ATM;
 import AtmMVC.model.AtmModel;
 import AtmMVC.model.Card;
 import AtmMVC.model.Customer;
+import AtmMVC.model.Observer;
 import AtmMVC.model.QueryConnection;
 import AtmMVC.view.LoginWindow;
 import java.awt.event.ActionEvent;
@@ -18,45 +20,32 @@ import javax.swing.JOptionPane;
  *
  * @author gabriel
  */
-public class ControlerLogin implements ActionListener, ControlerInterface {
+public class ControlerLogin implements ActionListener, ControlerInterface{
 
     private AtmModel model;
     private QueryConnection con;
     private Card card;
     private Customer customer;
+    private ATM atm;
     private LoginWindow login;
 
-    public Card getCard() {
-        return card;
-    }
-
-    public final void setCard(Card card) {
-        this.card = card;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public final void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public ControlerLogin(AtmModel model, QueryConnection con) {
+    public ControlerLogin(AtmModel model, QueryConnection con, Customer customer, Card card, ATM atm) {
         this.model = model;
         this.con = con;
+        this.customer = customer;
+        this.card = card;
+        this.atm = atm;
         this.login = new LoginWindow();
-        setCard(new Card());
-        setCustomer(new Customer());
+        
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == login.jbtnInsert) {
-            con.getCard(Integer.parseInt(login.ViewCardId.getText()), getCard());
+            con.getCard(Integer.parseInt(login.ViewCardId.getText()), card);
             if (card.isCurrentStatus() == true) {
                 close();
-                ControlerInterface pin = new ControlerPin(model, con, getCustomer(), getCard());
+                ControlerInterface pin = new ControlerPin(model, con, customer, card, atm);
                 pin.init();
 
             } else {
@@ -67,13 +56,15 @@ public class ControlerLogin implements ActionListener, ControlerInterface {
 
     @Override
     public void init() {
+        if(atm.isEnable()){
         login.setVisible(true);
         login.jbtnInsert.addActionListener(this);
+        }
     }
 
     @Override
     public void close() {
-        login.dispose();
+        login.setVisible(false);
     }
-
 }
+

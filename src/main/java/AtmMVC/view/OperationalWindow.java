@@ -21,8 +21,6 @@ public class OperationalWindow extends javax.swing.JFrame {
     public OperationalWindow() {
         initComponents();
         this.setLocationRelativeTo(null);
-        Greetins();
-        Balance(currentBalance);
     }
 
     /**
@@ -34,12 +32,12 @@ public class OperationalWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jlblGreetins = new javax.swing.JLabel();
+        jlbGreetins = new javax.swing.JLabel();
         jlblBalance = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jbtnDepositConfirm = new javax.swing.JButton();
-        jlblCounter = new javax.swing.JLabel();
+        jlblDepositView = new javax.swing.JLabel();
         textHelp1 = new javax.swing.JLabel();
         textHelp2 = new javax.swing.JLabel();
         textHelp3 = new javax.swing.JLabel();
@@ -65,16 +63,16 @@ public class OperationalWindow extends javax.swing.JFrame {
         jbtnExtractionAll = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTxtFInput = new javax.swing.JTextField();
+        jtxtExtraction = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPaneSearch1 = new javax.swing.JPanel();
         search4 = new javax.swing.JLabel();
         search5 = new javax.swing.JLabel();
         search6 = new javax.swing.JLabel();
-        jTxtSearch1 = new javax.swing.JTextField();
+        jTxtSearch = new javax.swing.JTextField();
         jlblTransfer = new javax.swing.JLabel();
-        jbtnAcept1 = new javax.swing.JButton();
-        jbtnAcept3 = new javax.swing.JButton();
+        jbtnAceptClient = new javax.swing.JButton();
+        jbtnClearTransfer = new javax.swing.JButton();
         jPnlKeyboard = new javax.swing.JPanel();
         keytrasnfer00 = new javax.swing.JButton();
         keytransfer03 = new javax.swing.JButton();
@@ -95,18 +93,17 @@ public class OperationalWindow extends javax.swing.JFrame {
         jbtnPrint2 = new javax.swing.JButton();
         jbtnPrint3 = new javax.swing.JButton();
         jbtnPrint4 = new javax.swing.JButton();
-        jbtnExit = new javax.swing.JButton();
+        btnExitOp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jlblGreetins.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        jlblGreetins.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlblGreetins.setBorder(javax.swing.BorderFactory.createTitledBorder("¡ Hola !"));
+        jlbGreetins.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jlbGreetins.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlbGreetins.setBorder(javax.swing.BorderFactory.createTitledBorder("¡ Hola !"));
 
         jlblBalance.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jlblBalance.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlblBalance.setText("$1000");
         jlblBalance.setBorder(javax.swing.BorderFactory.createTitledBorder("Tu saldo actual es:"));
 
         jbtnDepositConfirm.setText("Confirmar");
@@ -116,10 +113,9 @@ public class OperationalWindow extends javax.swing.JFrame {
             }
         });
 
-        jlblCounter.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        jlblCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlblCounter.setText("$.....");
-        jlblCounter.setBorder(javax.swing.BorderFactory.createTitledBorder("Dinero ingresado:"));
+        jlblDepositView.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jlblDepositView.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlblDepositView.setBorder(javax.swing.BorderFactory.createTitledBorder("Dinero ingresado ($)"));
 
         textHelp1.setText("Ingresa el dinero que quieras depositar");
 
@@ -176,7 +172,7 @@ public class OperationalWindow extends javax.swing.JFrame {
                                 .addComponent(textHelp3, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(textHelp2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jlblCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlblDepositView, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(12, 12, 12))
                         .addComponent(jbtnDepositConfirm, javax.swing.GroupLayout.Alignment.TRAILING))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -203,7 +199,7 @@ public class OperationalWindow extends javax.swing.JFrame {
                         .addComponent(textHelp2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textHelp3))
-                    .addComponent(jlblCounter))
+                    .addComponent(jlblDepositView))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtnFifty)
@@ -263,6 +259,11 @@ public class OperationalWindow extends javax.swing.JFrame {
         });
 
         jbtn7.setText("7");
+        jbtn7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn7ActionPerformed(evt);
+            }
+        });
 
         jbtn8.setText("8");
         jbtn8.addActionListener(new java.awt.event.ActionListener() {
@@ -322,7 +323,7 @@ public class OperationalWindow extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTxtFInput, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtxtExtraction, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -368,7 +369,7 @@ public class OperationalWindow extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTxtFInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtxtExtraction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -407,17 +408,17 @@ public class OperationalWindow extends javax.swing.JFrame {
 
         jlblTransfer.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente"));
 
-        jbtnAcept1.setText("Aceptar");
-        jbtnAcept1.addActionListener(new java.awt.event.ActionListener() {
+        jbtnAceptClient.setText("Aceptar");
+        jbtnAceptClient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnAcept1ActionPerformed(evt);
+                jbtnAceptClientActionPerformed(evt);
             }
         });
 
-        jbtnAcept3.setText("Borrar");
-        jbtnAcept3.addActionListener(new java.awt.event.ActionListener() {
+        jbtnClearTransfer.setText("Borrar");
+        jbtnClearTransfer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnAcept3ActionPerformed(evt);
+                jbtnClearTransferActionPerformed(evt);
             }
         });
 
@@ -432,15 +433,15 @@ public class OperationalWindow extends javax.swing.JFrame {
                     .addGroup(jPaneSearch1Layout.createSequentialGroup()
                         .addComponent(search6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTxtSearch1))
+                        .addComponent(jTxtSearch))
                     .addGroup(jPaneSearch1Layout.createSequentialGroup()
                         .addGroup(jPaneSearch1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(search4)
                             .addComponent(search5)
                             .addGroup(jPaneSearch1Layout.createSequentialGroup()
-                                .addComponent(jbtnAcept1)
+                                .addComponent(jbtnAceptClient)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jbtnAcept3)))
+                                .addComponent(jbtnClearTransfer)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -454,13 +455,13 @@ public class OperationalWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPaneSearch1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(search6)
-                    .addComponent(jTxtSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlblTransfer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPaneSearch1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtnAcept1)
-                    .addComponent(jbtnAcept3))
+                    .addComponent(jbtnAceptClient)
+                    .addComponent(jbtnClearTransfer))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -682,12 +683,7 @@ public class OperationalWindow extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Comprobantes", jPanel5);
 
-        jbtnExit.setText("Finalizar");
-        jbtnExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnExitActionPerformed(evt);
-            }
-        });
+        btnExitOp.setText("Finalizar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -698,11 +694,11 @@ public class OperationalWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTabbedPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlblGreetins, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jlbGreetins, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jlblBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbtnExit)))
+                        .addComponent(btnExitOp)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -710,11 +706,11 @@ public class OperationalWindow extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtnExit)
+                    .addComponent(btnExitOp)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jlblBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jlblGreetins, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jlbGreetins, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGap(29, 29, 29))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1)
@@ -724,225 +720,148 @@ public class OperationalWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
-        this.dispose();
-        LoginWindow w = new LoginWindow();
-        w.setVisible(true);
-    }//GEN-LAST:event_jbtnExitActionPerformed
-
     private void jbtnHalfThounsandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHalfThounsandActionPerformed
         Counter(500);
-        jlblCounter.setText("$" + String.valueOf(count));
+        jlblDepositView.setText(String.valueOf(count));
     }//GEN-LAST:event_jbtnHalfThounsandActionPerformed
 
     private void jbtnFiftyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnFiftyActionPerformed
         Counter(50);
-        jlblCounter.setText("$" + String.valueOf(count));
+        jlblDepositView.setText(String.valueOf(count));
     }//GEN-LAST:event_jbtnFiftyActionPerformed
 
     private void jbtnOneHundredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnOneHundredActionPerformed
         Counter(100);
-        jlblCounter.setText("$" + String.valueOf(count));
+        jlblDepositView.setText(String.valueOf(count));
     }//GEN-LAST:event_jbtnOneHundredActionPerformed
 
     private void jbtnTwoHundredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnTwoHundredActionPerformed
         Counter(200);
-        jlblCounter.setText("$" + String.valueOf(count));
+        jlblDepositView.setText(String.valueOf(count));
     }//GEN-LAST:event_jbtnTwoHundredActionPerformed
 
     private void jbtnOneThounsandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnOneThounsandActionPerformed
         Counter(1000);
-        jlblCounter.setText("$" + String.valueOf(count));
+        jlblDepositView.setText(String.valueOf(count));
     }//GEN-LAST:event_jbtnOneThounsandActionPerformed
 
     private void jbtnDepositConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDepositConfirmActionPerformed
-        if (count != 0) {
-            Balance(updateBalance(count));
-        }
-        this.count = 0;
+
     }//GEN-LAST:event_jbtnDepositConfirmActionPerformed
 
     private void jbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn1ActionPerformed
-        appendInput('1');
+        KeyboardATM.keyboard('1', jtxtExtraction);
     }//GEN-LAST:event_jbtn1ActionPerformed
 
     private void jbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn2ActionPerformed
-        appendInput('2');
+        KeyboardATM.keyboard('2', jtxtExtraction);
     }//GEN-LAST:event_jbtn2ActionPerformed
 
     private void jbtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn3ActionPerformed
-        appendInput('3');
+        KeyboardATM.keyboard('3', jtxtExtraction);
     }//GEN-LAST:event_jbtn3ActionPerformed
 
     private void jbtn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn6ActionPerformed
-        appendInput('6');// TODO add your handling code here:
+        KeyboardATM.keyboard('6', jtxtExtraction);
     }//GEN-LAST:event_jbtn6ActionPerformed
 
     private void jbtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn5ActionPerformed
-        appendInput('5');
+        KeyboardATM.keyboard('5', jtxtExtraction);
     }//GEN-LAST:event_jbtn5ActionPerformed
 
     private void jbtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn4ActionPerformed
-        appendInput('4');
+        KeyboardATM.keyboard('4', jtxtExtraction);
     }//GEN-LAST:event_jbtn4ActionPerformed
 
     private void jbtn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn8ActionPerformed
-        appendInput('8');
+        KeyboardATM.keyboard('8', jtxtExtraction);
     }//GEN-LAST:event_jbtn8ActionPerformed
 
     private void jbtn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn9ActionPerformed
-        appendInput('9');
+        KeyboardATM.keyboard('9', jtxtExtraction);
     }//GEN-LAST:event_jbtn9ActionPerformed
 
     private void jbtn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn0ActionPerformed
-        appendInput('0');
+        KeyboardATM.keyboard('0', jtxtExtraction);
     }//GEN-LAST:event_jbtn0ActionPerformed
 
     private void jbtnConfirmExtractionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnConfirmExtractionActionPerformed
-        int buffer = Integer.parseInt(jTxtFInput.getText());
-        if(buffer > 10000){
-         JOptionPane.showMessageDialog(rootPane, "Monto mayor al límite", "Error", JOptionPane.ERROR_MESSAGE);   
-        }
-        if(buffer > currentBalance && currentBalance < 0){
-            JOptionPane.showMessageDialog(rootPane, "Monto mayor al saldo disponible", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        Balance(updateBalance(-buffer));
-        jTxtFInput.setText("");
+
     }//GEN-LAST:event_jbtnConfirmExtractionActionPerformed
 
     private void jbtnClearExtractionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnClearExtractionActionPerformed
-        jTxtFInput.setText("");
+        jtxtExtraction.setText("");
     }//GEN-LAST:event_jbtnClearExtractionActionPerformed
 
     private void jbtnExtractionAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExtractionAllActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnExtractionAllActionPerformed
 
-    private void jbtnAcept3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAcept3ActionPerformed
-        jTxtSearch1.setText("");
-    }//GEN-LAST:event_jbtnAcept3ActionPerformed
+    private void jbtnClearTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnClearTransferActionPerformed
+        jTxtSearch.setText("");
+        jlblTransfer.setText("");
+    }//GEN-LAST:event_jbtnClearTransferActionPerformed
 
     private void keytransfer01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer01ActionPerformed
-        keyboard('1', jTxtSearch1);
+        KeyboardATM.keyboard('1', jTxtSearch);
     }//GEN-LAST:event_keytransfer01ActionPerformed
 
     private void keytransfer02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer02ActionPerformed
-        keyboard('2', jTxtSearch1);
+        KeyboardATM.keyboard('2', jTxtSearch);
     }//GEN-LAST:event_keytransfer02ActionPerformed
 
     private void keytransfer03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer03ActionPerformed
-        keyboard('3', jTxtSearch1);
+        KeyboardATM.keyboard('3', jTxtSearch);
     }//GEN-LAST:event_keytransfer03ActionPerformed
 
     private void keytransfer06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer06ActionPerformed
-        keyboard('6', jTxtSearch1);
+        KeyboardATM.keyboard('6', jTxtSearch);
     }//GEN-LAST:event_keytransfer06ActionPerformed
 
     private void keytransfer05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer05ActionPerformed
-        keyboard('5', jTxtSearch1);
+        KeyboardATM.keyboard('5', jTxtSearch);
     }//GEN-LAST:event_keytransfer05ActionPerformed
 
     private void keytransfer04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer04ActionPerformed
-        keyboard('4', jTxtSearch1);
+        KeyboardATM.keyboard('4', jTxtSearch);
     }//GEN-LAST:event_keytransfer04ActionPerformed
 
-    private void keytransfer08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer08ActionPerformed
-keyboard('8', jTxtSearch1);    }//GEN-LAST:event_keytransfer08ActionPerformed
-
-    private void keytransfer09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer09ActionPerformed
-keyboard('9', jTxtSearch1);    }//GEN-LAST:event_keytransfer09ActionPerformed
-
     private void keytrasnfer00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytrasnfer00ActionPerformed
-        keyboard('0', jTxtSearch1);
+        KeyboardATM.keyboard('0', jTxtSearch);
     }//GEN-LAST:event_keytrasnfer00ActionPerformed
 
-    private void jbtnAcept1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAcept1ActionPerformed
-        if(jTxtSearch1.getText().equalsIgnoreCase("45281")){
-            jlblTransfer.setText("Marge, Simpson");
-            if(JOptionPane.showConfirmDialog(this, "Confirmar", "Trasnferencia",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
-                (new TransferJDialog(this,true)).setVisible(true);
-            }
-        }
-        else{
-            JOptionPane.showMessageDialog(rootPane,"Cliente desconocido o inexistente","Error", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_jbtnAcept1ActionPerformed
+    private void jbtnAceptClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAceptClientActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(OperationalWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(OperationalWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(OperationalWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(OperationalWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    }//GEN-LAST:event_jbtnAceptClientActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new OperationalWindow().setVisible(true);
-            }
-        });
-    }
+    private void keytransfer08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer08ActionPerformed
+        KeyboardATM.keyboard('8', jTxtSearch);
+    }//GEN-LAST:event_keytransfer08ActionPerformed
 
-    private void Greetins() {
-        String lastname = "Simpson";
-        String Name = "Homero";
-        jlblGreetins.setText(Name + " ," + lastname);
-    }
+    private void keytransfer09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keytransfer09ActionPerformed
+        KeyboardATM.keyboard('9', jTxtSearch);
+    }//GEN-LAST:event_keytransfer09ActionPerformed
 
-    private void Balance(int amount) {
-        jlblBalance.setText("$" + amount);
-    }
-
+    private void jbtn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn7ActionPerformed
+        KeyboardATM.keyboard('7', jtxtExtraction);
+    }//GEN-LAST:event_jbtn7ActionPerformed
     private int Counter(int sum) {
         return count += sum;
     }
-
-    private int updateBalance(int update) {
-        if(currentBalance==0 && update<0x0){
-        return 0;
+    
+    public void clearCounter(){
+        jlblDepositView.setText(null);
+        this.count=0;
     }
-        return this.currentBalance += update;
+    
+    public void clearTransfer(){
+        jTxtSearch.setText(null);
+        jlblTransfer.setText(null);
     }
 
     private int count;
-    private int currentBalance = 1000;
-
-    private void appendInput(char input) {
-      
-            StringBuilder str = new StringBuilder();
-            str.append(jTxtFInput.getText());
-            str.append(input);
-            jTxtFInput.setText(str.toString());
-       
-    }
-    
-    private void keyboard(char input, JTextField text){
-            StringBuilder str = new StringBuilder();
-            str.append(text.getText());
-            str.append(input);
-            text.setText(str.toString());
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnExitOp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -955,9 +874,8 @@ keyboard('9', jTxtSearch1);    }//GEN-LAST:event_keytransfer09ActionPerformed
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPnlKeyboard;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JTextField jTxtFInput;
-    private javax.swing.JTextField jTxtSearch1;
+    public javax.swing.JToggleButton jToggleButton1;
+    public javax.swing.JTextField jTxtSearch;
     private javax.swing.JButton jbtn0;
     private javax.swing.JButton jbtn1;
     private javax.swing.JButton jbtn2;
@@ -968,27 +886,27 @@ keyboard('9', jTxtSearch1);    }//GEN-LAST:event_keytransfer09ActionPerformed
     private javax.swing.JButton jbtn7;
     private javax.swing.JButton jbtn8;
     private javax.swing.JButton jbtn9;
-    private javax.swing.JButton jbtnAcept1;
-    private javax.swing.JButton jbtnAcept3;
-    private javax.swing.JButton jbtnChangePIN;
+    public javax.swing.JButton jbtnAceptClient;
+    public javax.swing.JButton jbtnChangePIN;
     private javax.swing.JButton jbtnClearExtraction;
-    private javax.swing.JButton jbtnConfirmExtraction;
-    private javax.swing.JButton jbtnDepositConfirm;
-    private javax.swing.JButton jbtnExit;
-    private javax.swing.JButton jbtnExtractionAll;
+    private javax.swing.JButton jbtnClearTransfer;
+    public javax.swing.JButton jbtnConfirmExtraction;
+    public javax.swing.JButton jbtnDepositConfirm;
+    public javax.swing.JButton jbtnExtractionAll;
     private javax.swing.JButton jbtnFifty;
     private javax.swing.JButton jbtnHalfThounsand;
     private javax.swing.JButton jbtnOneHundred;
     private javax.swing.JButton jbtnOneThounsand;
-    private javax.swing.JButton jbtnPrint;
-    private javax.swing.JButton jbtnPrint2;
-    private javax.swing.JButton jbtnPrint3;
-    private javax.swing.JButton jbtnPrint4;
+    public javax.swing.JButton jbtnPrint;
+    public javax.swing.JButton jbtnPrint2;
+    public javax.swing.JButton jbtnPrint3;
+    public javax.swing.JButton jbtnPrint4;
     private javax.swing.JButton jbtnTwoHundred;
-    private javax.swing.JLabel jlblBalance;
-    private javax.swing.JLabel jlblCounter;
-    private javax.swing.JLabel jlblGreetins;
-    private javax.swing.JLabel jlblTransfer;
+    public javax.swing.JLabel jlbGreetins;
+    public javax.swing.JLabel jlblBalance;
+    public javax.swing.JLabel jlblDepositView;
+    public javax.swing.JLabel jlblTransfer;
+    public javax.swing.JTextField jtxtExtraction;
     private javax.swing.JButton keytransfer01;
     private javax.swing.JButton keytransfer02;
     private javax.swing.JButton keytransfer03;

@@ -11,10 +11,7 @@ import AtmMVC.model.ATM;
 import AtmMVC.model.AtmModel;
 import AtmMVC.model.Card;
 import AtmMVC.model.Customer;
-import AtmMVC.model.IllegalBalanceException;
 import AtmMVC.model.QueryConnection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -26,10 +23,12 @@ public class mainAtm {
         AtmModel model = new AtmModel();
         QueryConnection con = new QueryConnection();
         ATM atm = new ATM();
-        ControlerInterface controler = new ControlerLogin(model, con);
+        Customer customer = new Customer();
+        Card card = new Card();
+        atm.setEnable(true);
+        atm.setSelfBalance(100000);
+        atm.setMAXTRANSFER(20000);
+        ControlerInterface controler = new ControlerLogin(model, con, customer, card, atm);
         controler.init();
+    }
 }
-}
-    
-
- 

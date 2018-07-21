@@ -192,7 +192,7 @@ public class PinWindow extends javax.swing.JFrame implements KeyboardATM{
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbtnClear)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbtnCancell, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jbtnCancell))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(29, 29, 29)
@@ -240,17 +240,11 @@ public class PinWindow extends javax.swing.JFrame implements KeyboardATM{
     }//GEN-LAST:event_jbtn0ActionPerformed
 
     private void jbtnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnConfirmActionPerformed
-        char[] input = jpwrd.getPassword();
-        char[] password = {'1', '2', '3', '4'};
-        if (Arrays.equals(input, password)) {
-            JOptionPane.showMessageDialog(rootPane, "Funciona");
-        }
+        
     }//GEN-LAST:event_jbtnConfirmActionPerformed
 
     private void jbtnCancellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCancellActionPerformed
-        this.dispose();
-        LoginWindow login = new LoginWindow();
-        login.setVisible(true);
+
     }//GEN-LAST:event_jbtnCancellActionPerformed
 
     private void jbtnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnClearActionPerformed
@@ -273,40 +267,6 @@ public class PinWindow extends javax.swing.JFrame implements KeyboardATM{
         KeyboardATM.keyboard('5', jpwrd,MAX_LENGHT);
     }//GEN-LAST:event_jbtn5ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PinWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PinWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PinWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PinWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PinWindow().setVisible(true);
-            }
-        });
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jbtn0;
@@ -319,10 +279,10 @@ public class PinWindow extends javax.swing.JFrame implements KeyboardATM{
     private javax.swing.JButton jbtn7;
     private javax.swing.JButton jbtn8;
     private javax.swing.JButton jbtn9;
-    private javax.swing.JButton jbtnCancell;
+    public javax.swing.JButton jbtnCancell;
     private javax.swing.JButton jbtnClear;
-    private javax.swing.JButton jbtnConfirm;
-    private javax.swing.JPasswordField jpwrd;
+    public javax.swing.JButton jbtnConfirm;
+    public javax.swing.JPasswordField jpwrd;
     // End of variables declaration//GEN-END:variables
     private static final int MAX_LENGHT = 4;
 
