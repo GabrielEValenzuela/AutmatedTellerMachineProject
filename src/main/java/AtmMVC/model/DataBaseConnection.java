@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class DataBaseConnection {
 
-    private final String URL="jdbc:mysql://localhost/Javabank?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    private final String URL="jdbc:mysql://localhost:3306/Javabank?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
             //"jdbc:mysql://localhost:3306/Javabank?autoReconnet=true&useSSL=false"; 
     private final String USER="JavaAdmin";
     private final String PASSWORD = "java";

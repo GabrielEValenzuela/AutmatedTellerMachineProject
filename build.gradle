@@ -4,7 +4,7 @@ version = '1.0'
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-mainClassName = 'main'
+mainClassName = "Main.mainAtm"
 
 repositories {
     mavenCentral()
@@ -13,6 +13,12 @@ repositories {
 dependencies {
     compile 'junit:junit:4.12'
     compile 'mysql:mysql-connector-java:8.0.11'
+}
+
+jar{
+        manifest {
+        attributes 'Main-Class': 'Main.mainAtm'
+    }
 }
 
 run {
