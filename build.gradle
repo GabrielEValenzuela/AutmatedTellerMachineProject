@@ -1,10 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'application'
-version = '1.0'
+version = '2.0'
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-mainClassName = 'main'
+mainClassName = "Main.mainAtm"
 
 repositories {
     mavenCentral()
@@ -12,9 +12,26 @@ repositories {
 
 dependencies {
     compile 'junit:junit:4.12'
-    compile 'mysql:mysql-connector-java:8.0.11'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
 }
 
-run {
-standardInput = System.in
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compileClasspath.files.collect {"$it.name"}.join(' '),
+                'Main-Class': 'Main.mainAtm'
+        )
+    }
+    from {
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+      }
+ }
+
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'Main.mainAtm'
+    }
+    baseName = 'cajero-automatico'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
