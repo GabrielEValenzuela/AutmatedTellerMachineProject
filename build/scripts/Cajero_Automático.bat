@@ -1,7 +1,7 @@
 @if "%DEBUG%" == "" @echo off
 @rem ##########################################################################
 @rem
-@rem  Cajero_Autom·tico startup script for Windows
+@rem  Cajero_Autom√°tico startup script for Windows
 @rem
 @rem ##########################################################################
 
@@ -63,9 +63,9 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\Cajero_Autom·tico-1.0.jar;%APP_HOME%\lib\junit-4.12.jar;%APP_HOME%\lib\mysql-connector-java-8.0.11.jar;%APP_HOME%\lib\hamcrest-core-1.3.jar;%APP_HOME%\lib\protobuf-java-2.6.0.jar
+set CLASSPATH=%APP_HOME%\lib\Cajero_Autom√°tico-2.0.jar;%APP_HOME%\lib\junit-4.12.jar;%APP_HOME%\lib\mysql-connector-java-8.0.11.jar;%APP_HOME%\lib\hamcrest-core-1.3.jar;%APP_HOME%\lib\protobuf-java-2.6.0.jar
 
-@rem Execute Cajero_Autom·tico
+@rem Execute Cajero_Autom√°tico
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CAJERO_AUTOM_TICO_OPTS%  -classpath "%CLASSPATH%" Main.mainAtm %CMD_LINE_ARGS%
 
 :end

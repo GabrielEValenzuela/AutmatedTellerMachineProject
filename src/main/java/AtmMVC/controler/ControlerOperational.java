@@ -59,8 +59,8 @@ class ControlerOperational implements ActionListener, ControlerInterface, Observ
     @Override
     public void close() {
         op.setVisible(false);
-        this.login = new LoginWindow();
-        login.setVisible(true);
+        ControlerInterface login = new ControlerLogin(model, con, customer, card, atm);
+        login.init();
     }
 
     @Override

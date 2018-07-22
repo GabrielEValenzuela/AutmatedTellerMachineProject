@@ -91,6 +91,10 @@ public class LoginWindow extends javax.swing.JFrame {
     public void close(){
         this.dispose();
     }
+    
+    public void clearInsert(){
+        ViewCardId.setText(null);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextField ViewCardId;
     private javax.swing.JButton jbtnExit;

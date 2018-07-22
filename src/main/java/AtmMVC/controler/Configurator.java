@@ -9,28 +9,22 @@ import AtmMVC.controler.ControlerLogin;
 
 public class Configurator {
 
-    private AtmModel model;
     private QueryConnection con;
-    private Card card;
-    private Customer customer;
     private ATM atm;
     private static Configurator myConfigSingleton;
 
-    private Configurator(AtmModel model, QueryConnection con, Card card, Customer customer, ATM atm) {
-        this.model = model;
+    private Configurator(QueryConnection con,ATM atm) {
         this.con = con;
-        this.card = card;
-        this.customer = customer;
         this.atm = atm;
     }
 
-    public static Configurator getConfigurator(AtmModel model, QueryConnection con, Card card, Customer customer, ATM atm) {
+    public static Configurator getConfigurator(QueryConnection con,ATM atm) {
         if (myConfigSingleton == null) {
             synchronized (Configurator.class) {
                 atm.setId(402315);
                 atm.setEnable(true);
                 atm.setSelfBalance(40000);
-                myConfigSingleton = new Configurator(model, con, card, customer, atm);
+                myConfigSingleton = new Configurator(con,atm);
             }
         }
         return myConfigSingleton;
@@ -40,20 +34,8 @@ public class Configurator {
         return con;
     }
 
-    public Card getCard() {
-        return card;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
     public ATM getAtm() {
         return atm;
-    }
-
-    public AtmModel getModel() {
-        return model;
     }
 
 }

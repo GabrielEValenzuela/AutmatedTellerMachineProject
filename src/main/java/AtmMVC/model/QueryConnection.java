@@ -96,8 +96,6 @@ public class QueryConnection extends DataBaseConnection {
         }
     }
 
-<<<<<<< HEAD
-=======
     public void blockCard(Card card) {
         String query = "UPDATE cardTable SET currentStatus= ? WHERE cardId=" + card.getCardId();
         Connection connection = getConnection();
@@ -119,5 +117,4 @@ public class QueryConnection extends DataBaseConnection {
         }
 
     }
->>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
 }

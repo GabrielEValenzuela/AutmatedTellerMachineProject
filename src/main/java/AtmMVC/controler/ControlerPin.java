@@ -19,27 +19,17 @@ import javax.swing.JOptionPane;
  *
  * @author gabriel
  */
-<<<<<<< HEAD
-public class ControlerPin implements ActionListener,ControlerInterface{
-    
-=======
 public class ControlerPin implements ActionListener, ControlerInterface {
 
->>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
     private AtmModel model;
     private QueryConnection con;
     private Card card;
     private Customer customer;
     private ATM atm;
     private PinWindow pin;
-<<<<<<< HEAD
-    
-    public ControlerPin(AtmModel model, QueryConnection con, Customer customer, Card card, ATM atm){
-=======
     private int attempts = 0;
 
     public ControlerPin(AtmModel model, QueryConnection con, Customer customer, Card card, ATM atm) {
->>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
         this.model = model;
         this.con = con;
         this.customer = customer;
@@ -47,23 +37,6 @@ public class ControlerPin implements ActionListener, ControlerInterface {
         this.atm = atm;
         this.pin = new PinWindow();
     }
-<<<<<<< HEAD
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == pin.jbtnConfirm){
-            String str = String.valueOf(pin.jpwrd.getPassword());
-            con.getCustomer(card.getCustomerAssociated(), customer);
-            if (str.equals(customer.getPIN())){
-            ControlerInterface op = new ControlerOperational(model, con, customer, card, atm);
-            JOptionPane.showMessageDialog(null, "¡ Bienvenido "+customer.getFirstName()+ " !");
-            close();
-            op.init();
-       }
-    }
-        
-        if(e.getSource() == pin.jbtnCancell){
-=======
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -80,32 +53,22 @@ public class ControlerPin implements ActionListener, ControlerInterface {
             if (str.equals(customer.getPIN())) {
                 ControlerInterface op = new ControlerOperational(model, con, customer, card, atm);
                 JOptionPane.showMessageDialog(null, "¡ Bienvenido " + customer.getFirstName() + " !");
-                close();
+                pin.dispose();
                 op.init();
             }
         }
 
         if (e.getSource() == pin.jbtnCancell) {
->>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
             ControlerInterface login = new ControlerLogin(model, con, customer, card, atm);
             close();
             login.init();
         }
-<<<<<<< HEAD
-    
-}
-
-    @Override
-    public void init() {
-     pin.setVisible(true);
-=======
 
     }
 
     @Override
     public void init() {
         pin.setVisible(true);
->>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
         pin.jbtnConfirm.addActionListener(this);
         pin.jbtnCancell.addActionListener(this);
     }
@@ -113,11 +76,6 @@ public class ControlerPin implements ActionListener, ControlerInterface {
     @Override
     public void close() {
         pin.setVisible(false);
-<<<<<<< HEAD
-        
-    }
-}
-=======
 
     }
 
@@ -134,4 +92,3 @@ public class ControlerPin implements ActionListener, ControlerInterface {
 
     }
 }
->>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15

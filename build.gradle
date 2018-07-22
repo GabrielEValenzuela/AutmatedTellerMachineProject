@@ -1,10 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'application'
-<<<<<<< HEAD
 version = '2.0'
-=======
-version = '1.0'
->>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
@@ -16,7 +12,6 @@ repositories {
 
 dependencies {
     compile 'junit:junit:4.12'
-<<<<<<< HEAD
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
 }
 
@@ -40,26 +35,3 @@ task customFatJar(type: Jar) {
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
-=======
-    compile 'mysql:mysql-connector-java:8.0.11'
-}
-
-task fatJar(type: Jar) {
-    manifest {
-        attributes 'Implementation-Title': 'rpi-sense-hat-lib',
-                'Implementation-Version': version,
-                'Main-Class': 'Main.mainAtm'
-    }
-    baseName = project.name
-    from { 
-        configurations.compile.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-    }
-    with jar
-}
-
-run {
-standardInput = System.in
-}
->>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
