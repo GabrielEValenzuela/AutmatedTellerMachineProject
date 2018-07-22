@@ -15,10 +15,19 @@ dependencies {
     compile 'mysql:mysql-connector-java:8.0.11'
 }
 
-jar{
-        manifest {
-        attributes 'Main-Class': 'Main.mainAtm'
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'rpi-sense-hat-lib',
+                'Implementation-Version': version,
+                'Main-Class': 'Main.mainAtm'
     }
+    baseName = project.name
+    from { 
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    with jar
 }
 
 run {

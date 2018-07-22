@@ -1,2 +1,4 @@
 # AutmatedTellerMachineProject
-[![Build Status](https://travis-ci.org/GabrielEValenzuela/AutmatedTellerMachineProject.svg?branch=GabiBranch)](https://travis-ci.org/GabrielEValenzuela/AutmatedTellerMachineProject)
+Project of software engineering. 2018
+
+Rediseñando...

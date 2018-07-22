@@ -41,7 +41,6 @@ public class ControlerPin implements ActionListener,ControlerInterface{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == pin.jbtnConfirm){
             String str = String.valueOf(pin.jpwrd.getPassword());
-            con.getCustomer(card.getCustomerAssociated(), customer);
             if (str.equals(customer.getPIN())){
             ControlerInterface op = new ControlerOperational(model, con, customer, card, atm);
             JOptionPane.showMessageDialog(null, "¡ Bienvenido "+customer.getFirstName()+ " !");
