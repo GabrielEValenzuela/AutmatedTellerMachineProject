@@ -14,7 +14,11 @@ public class ATM{
     private int id;
     private float selfBalance;
     private boolean enable;
+<<<<<<< HEAD
     private int MAXTRANSFER;
+=======
+    private int MAXTRANSFER = 10000;
+>>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
 
     public int getMAXTRANSFER() {
         return MAXTRANSFER;

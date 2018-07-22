@@ -96,4 +96,28 @@ public class QueryConnection extends DataBaseConnection {
         }
     }
 
+<<<<<<< HEAD
+=======
+    public void blockCard(Card card) {
+        String query = "UPDATE cardTable SET currentStatus= ? WHERE cardId=" + card.getCardId();
+        Connection connection = getConnection();
+        PreparedStatement statement = null;
+
+        try {
+            statement = connection.prepareStatement(query);
+            statement.setBoolean(1, false);
+            statement.executeUpdate();
+
+        } catch (Exception e) {
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+
+        }
+
+    }
+>>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
 }

@@ -9,7 +9,10 @@ import AtmMVC.model.ATM;
 import AtmMVC.model.AtmModel;
 import AtmMVC.model.Card;
 import AtmMVC.model.Customer;
+<<<<<<< HEAD
 import AtmMVC.model.Observer;
+=======
+>>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
 import AtmMVC.model.QueryConnection;
 import AtmMVC.view.LoginWindow;
 import java.awt.event.ActionEvent;
@@ -43,7 +46,12 @@ public class ControlerLogin implements ActionListener, ControlerInterface{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == login.jbtnInsert) {
             con.getCard(Integer.parseInt(login.ViewCardId.getText()), card);
+<<<<<<< HEAD
             if (card.isCurrentStatus() == true) {
+=======
+            con.getCustomer(card.getCustomerAssociated(), customer);
+            if (card.isCurrentStatus() == true && !customer.hasDoubleCheck()) {
+>>>>>>> c5eeee8c290de06f237b2b18abfb7cf025e0ab15
                 close();
                 ControlerInterface pin = new ControlerPin(model, con, customer, card, atm);
                 pin.init();
