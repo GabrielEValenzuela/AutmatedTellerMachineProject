@@ -5,8 +5,6 @@
  */
 package AtmMVC.model;
 
-import com.mysql.cj.protocol.x.MessageConstants;
-
 /**
  *
  * @author Gabriel

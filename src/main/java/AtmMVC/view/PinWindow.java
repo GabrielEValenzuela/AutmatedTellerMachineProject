@@ -95,6 +95,11 @@ public class PinWindow extends javax.swing.JFrame implements KeyboardATM{
         });
 
         jbtn7.setText("7");
+        jbtn7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn7ActionPerformed(evt);
+            }
+        });
 
         jbtn8.setText("8");
         jbtn8.addActionListener(new java.awt.event.ActionListener() {
@@ -266,6 +271,10 @@ public class PinWindow extends javax.swing.JFrame implements KeyboardATM{
     private void jbtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn5ActionPerformed
         KeyboardATM.keyboard('5', jpwrd,MAX_LENGHT);
     }//GEN-LAST:event_jbtn5ActionPerformed
+
+    private void jbtn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn7ActionPerformed
+        KeyboardATM.keyboard('7', jpwrd,MAX_LENGHT);
+    }//GEN-LAST:event_jbtn7ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
