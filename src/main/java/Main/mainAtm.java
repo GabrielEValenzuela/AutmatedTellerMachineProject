@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Main;
 
 import AtmMVC.controler.Configurator;
@@ -17,13 +12,13 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author gabriel
+ * @author Grupo ARES
  */
 public class mainAtm {
 
     public static void main(String[] args) {
         try {
-            Configurator config = Configurator.getConfigurator(new QueryConnection(),new ATM());
+            Configurator config = Configurator.getConfigurator(new QueryConnection(), new ATM());
             ControlerInterface controler = new ControlerLogin(new AtmModel(), config.getCon(), new Customer(), new Card(), config.getAtm());
             controler.init();
         } catch (Exception e) {

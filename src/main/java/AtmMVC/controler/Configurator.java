@@ -13,18 +13,18 @@ public class Configurator {
     private ATM atm;
     private static Configurator myConfigSingleton;
 
-    private Configurator(QueryConnection con,ATM atm) {
+    private Configurator(QueryConnection con, ATM atm) {
         this.con = con;
         this.atm = atm;
     }
 
-    public static Configurator getConfigurator(QueryConnection con,ATM atm) {
+    public static Configurator getConfigurator(QueryConnection con, ATM atm) {
         if (myConfigSingleton == null) {
             synchronized (Configurator.class) {
                 atm.setId(402315);
                 atm.setEnable(true);
                 atm.setSelfBalance(40000);
-                myConfigSingleton = new Configurator(con,atm);
+                myConfigSingleton = new Configurator(con, atm);
             }
         }
         return myConfigSingleton;

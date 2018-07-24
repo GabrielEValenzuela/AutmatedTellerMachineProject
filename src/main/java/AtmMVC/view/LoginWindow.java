@@ -77,22 +77,22 @@ public class LoginWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ViewCardIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewCardIdActionPerformed
-        
+
     }//GEN-LAST:event_ViewCardIdActionPerformed
 
     private void jbtnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnInsertActionPerformed
-        
+
     }//GEN-LAST:event_jbtnInsertActionPerformed
 
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
-       System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jbtnExitActionPerformed
-   
-    public void close(){
+
+    public void close() {
         this.dispose();
     }
-    
-    public void clearInsert(){
+
+    public void clearInsert() {
         ViewCardId.setText(null);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,7 +1,7 @@
 @if "%DEBUG%" == "" @echo off
 @rem ##########################################################################
 @rem
-@rem  Cajero_Automático_v3-0 startup script for Windows
+@rem  Cajero_Automático_v startup script for Windows
 @rem
 @rem ##########################################################################
 
@@ -13,7 +13,7 @@ if "%DIRNAME%" == "" set DIRNAME=.
 set APP_BASE_NAME=%~n0
 set APP_HOME=%DIRNAME%..
 
-@rem Add default JVM options here. You can also use JAVA_OPTS and CAJERO_AUTOM_TICO_V3_0_OPTS to pass JVM options to this script.
+@rem Add default JVM options here. You can also use JAVA_OPTS and CAJERO_AUTOM_TICO_V_OPTS to pass JVM options to this script.
 set DEFAULT_JVM_OPTS=
 
 @rem Find java.exe
@@ -63,19 +63,19 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\Cajero_Automático_v3-0-1.0.jar;%APP_HOME%\lib\junit-4.12.jar;%APP_HOME%\lib\mysql-connector-java-8.0.11.jar;%APP_HOME%\lib\hamcrest-core-1.3.jar;%APP_HOME%\lib\protobuf-java-2.6.0.jar
+set CLASSPATH=%APP_HOME%\lib\Cajero_Automático_v-2.0.5.jar;%APP_HOME%\lib\junit-4.12.jar;%APP_HOME%\lib\mysql-connector-java-8.0.11.jar;%APP_HOME%\lib\hamcrest-core-1.3.jar;%APP_HOME%\lib\protobuf-java-2.6.0.jar
 
-@rem Execute Cajero_Automático_v3-0
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CAJERO_AUTOM_TICO_V3_0_OPTS%  -classpath "%CLASSPATH%" Main.mainAtm %CMD_LINE_ARGS%
+@rem Execute Cajero_Automático_v
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CAJERO_AUTOM_TICO_V_OPTS%  -classpath "%CLASSPATH%" Main.mainAtm %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell
 if "%ERRORLEVEL%"=="0" goto mainEnd
 
 :fail
-rem Set variable CAJERO_AUTOM_TICO_V3_0_EXIT_CONSOLE if you need the _script_ return code instead of
+rem Set variable CAJERO_AUTOM_TICO_V_EXIT_CONSOLE if you need the _script_ return code instead of
 rem the _cmd.exe /c_ return code!
-if  not "" == "%CAJERO_AUTOM_TICO_V3_0_EXIT_CONSOLE%" exit 1
+if  not "" == "%CAJERO_AUTOM_TICO_V_EXIT_CONSOLE%" exit 1
 exit /b 1
 
 :mainEnd

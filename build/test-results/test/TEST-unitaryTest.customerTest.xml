@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unitaryTest.customerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-07-23T02:46:53" hostname="DESKTOP-7EDQ4TM" time="0.001">
+<testsuite name="unitaryTest.customerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-07-24T02:57:14" hostname="DESKTOP-7EDQ4TM" time="0.0">
   <properties/>
-  <testcase name="testParametersCustomer" classname="unitaryTest.customerTest" time="0.001"/>
+  <testcase name="testParametersCustomer" classname="unitaryTest.customerTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

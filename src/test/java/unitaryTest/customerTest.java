@@ -28,6 +28,7 @@ public class customerTest {
         customer.setPIN("3027");
         customer.setDoubleCheck(false);
         customer.setEmail("homero.s@yahoo.com");
+        customer.setBank("NACION");
     }
     
     @Test
@@ -39,6 +40,7 @@ public class customerTest {
         assertEquals("3027", customer.getPIN());
         assertEquals(false, customer.hasDoubleCheck());
         assertEquals("homero.s@yahoo.com", customer.getEmail());
+        assertEquals("NACION", customer.getBank());
     }
     
 }

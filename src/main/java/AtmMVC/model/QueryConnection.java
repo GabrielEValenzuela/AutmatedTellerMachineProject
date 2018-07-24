@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package AtmMVC.model;
 
 import java.sql.Connection;
@@ -10,10 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author gabriel
- */
 public class QueryConnection extends DataBaseConnection {
 
     public boolean getCustomer(int id, Customer customer) {
@@ -34,6 +25,7 @@ public class QueryConnection extends DataBaseConnection {
                 customer.setDoubleCheck(result.getBoolean("doubleCheck"));
                 customer.setPIN(result.getString("PIN"));
                 customer.setCustomerId(result.getInt("customerId"));
+                customer.setBank(result.getString("bankAssociated"));
             }
             return true;
         } catch (Exception e) {
@@ -58,7 +50,6 @@ public class QueryConnection extends DataBaseConnection {
             result = statement.executeQuery();
             if (result.next()) {
                 card.setCardId(result.getInt("cardId"));
-                card.setBankAssociated(result.getString("bankAssociated"));
                 card.setCustomerAssociated(result.getInt("customerAssociated"));
                 card.setCurrentStatus(result.getBoolean("currentStatus"));
             }

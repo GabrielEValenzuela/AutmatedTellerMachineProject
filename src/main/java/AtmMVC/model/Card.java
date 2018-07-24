@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package AtmMVC.model;
 
 import java.util.Observer;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 
-/**
- *
- * @author gabriel
- */
 public class Card implements Observer {
-    
+
     private int cardId;
     private String bankAssociated;
     private int customerAssociated;
@@ -54,9 +45,7 @@ public class Card implements Observer {
 
     @Override
     public void update(java.util.Observable o, Object arg) {
-        
+
     }
-    
-    
-    
+
 }

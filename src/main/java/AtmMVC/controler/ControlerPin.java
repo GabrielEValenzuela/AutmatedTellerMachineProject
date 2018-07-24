@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package AtmMVC.controler;
 
 import AtmMVC.model.ATM;
@@ -15,10 +10,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author gabriel
- */
 public class ControlerPin implements ActionListener, ControlerInterface {
 
     private AtmModel model;
@@ -83,12 +74,12 @@ public class ControlerPin implements ActionListener, ControlerInterface {
         return this.attempts += 1;
     }
 
-    private void update() {
+    public void update() {
         con.blockCard(card);
         JOptionPane.showMessageDialog(null, "La tajeta " + card.getCardId() + " ha sido bloqueada", "Bloqueo", JOptionPane.ERROR_MESSAGE);
         ControlerInterface login = new ControlerLogin(model, con, customer, card, atm);
         close();
         login.init();
-
     }
+
 }
