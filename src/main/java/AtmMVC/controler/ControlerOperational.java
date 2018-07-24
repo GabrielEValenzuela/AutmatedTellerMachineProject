@@ -1,28 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package AtmMVC.controler;
 
 import AtmMVC.model.ATM;
 import AtmMVC.model.AtmModel;
 import AtmMVC.model.Card;
+import AtmMVC.model.Commisions;
 import AtmMVC.model.Customer;
 import AtmMVC.model.IllegalBalanceException;
-import AtmMVC.model.Observer;
 import AtmMVC.model.QueryConnection;
 import AtmMVC.view.LoginWindow;
 import AtmMVC.view.OperationalWindow;
 import AtmMVC.view.TransferJDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author gabriel
- */
 class ControlerOperational implements ActionListener, ControlerInterface, Observer {
 
     private AtmModel model;
@@ -54,13 +47,14 @@ class ControlerOperational implements ActionListener, ControlerInterface, Observ
         op.jlbGreetins.setText(customer.getFirstName() + ", " + customer.getLastName());
         op.jlblBalance.setText("$" + String.valueOf(customer.getBalance()));
         transfer.setVisible(false);
+        customer.addObserver(this);
     }
 
     @Override
     public void close() {
         op.setVisible(false);
-        this.login = new LoginWindow();
-        login.setVisible(true);
+        ControlerInterface login = new ControlerLogin(model, con, customer, card, atm);
+        login.init();
     }
 
     @Override
@@ -68,20 +62,20 @@ class ControlerOperational implements ActionListener, ControlerInterface, Observ
         if (e.getSource() == op.btnExitOp) {
             close();
         }
-        if (e.getSource() == op.jbtnDepositConfirm) {
+        if (e.getSource().equals(op.jbtnDepositConfirm)) {
             try {
                 model.makeDeposit(Float.parseFloat(op.jlblDepositView.getText()), customer, con, atm);
-                update();
+                this.update(customer, null);
                 op.clearCounter();
             } catch (Exception error) {
                 JOptionPane.showMessageDialog(null, "Debes ingresar primero el dinero", "Houston tenemos un problema", JOptionPane.OK_OPTION);
             }
         }
 
-        if (e.getSource() == op.jbtnConfirmExtraction) {
+        if (e.getSource().equals(op.jbtnConfirmExtraction)) {
             try {
                 model.makeExtraction(Float.parseFloat(op.jtxtExtraction.getText()), customer, con, atm);
-                update();
+                this.update(customer, null);
                 op.jtxtExtraction.setText("");
             } catch (IllegalBalanceException IBE) {
                 JOptionPane.showMessageDialog(null, IBE.infoError(), "Houston tenemos un problema", JOptionPane.OK_OPTION);
@@ -89,7 +83,7 @@ class ControlerOperational implements ActionListener, ControlerInterface, Observ
             }
         }
 
-        if (e.getSource() == op.jbtnAceptClient) {
+        if (e.getSource().equals(op.jbtnAceptClient)) {
             try {
                 Customer custTemp = new Customer();
                 con.getCustomer(Integer.parseInt(op.jTxtSearch.getText()), custTemp);
@@ -98,17 +92,20 @@ class ControlerOperational implements ActionListener, ControlerInterface, Observ
                     throw new IllegalBalanceException("El cliente no existe/Factura no es válida");
                 }
                 op.jlblTransfer.setText(custTemp.getFirstName() + ", " + custTemp.getLastName());
+                Commisions comision = model.getMap().get(customer.getBank());
+                transfer.jlblTransfer.setText(comision.getCommisionS() + "%");
                 int buffer = JOptionPane.showConfirmDialog(op, "¿Confirmar?", "Transferencia", JOptionPane.YES_OPTION);
-                if(buffer == JOptionPane.NO_OPTION){
+                if (buffer == JOptionPane.NO_OPTION) {
                     throw new Exception();
                 }
                 transfer.setVisible(true);
                 transfer.jbtnAceptTransfer.addActionListener(this);
-                if (Integer.parseInt(transfer.jtxtAmount.getText()) != 0) {
-                    model.makeTransferPayment(Integer.parseInt(transfer.jtxtAmount.getText()), customer, custTemp, con, atm);
-                    update();
+                if (Float.parseFloat(transfer.jtxtAmount.getText()) != 0) {
+                    model.makeTransferPayment(Float.parseFloat(transfer.jtxtAmount.getText()), customer, custTemp, con, atm);
+                    this.update(customer, null);
                     op.clearTransfer();
                     transfer.clearFields();
+                    transfer.dispose();
                 } else {
                     throw new IllegalArgumentException("Introduce el valor a transferir/Pagar");
                 }
@@ -116,8 +113,7 @@ class ControlerOperational implements ActionListener, ControlerInterface, Observ
                 JOptionPane.showMessageDialog(null, ecust.infoError(), "Houston tenemos un problema", JOptionPane.OK_OPTION);
             } catch (IllegalArgumentException arg) {
                 JOptionPane.showMessageDialog(null, arg.getMessage(), "Houston tenemos un problema", JOptionPane.OK_OPTION);
-            }
-            catch (Exception exp){
+            } catch (Exception exp) {
                 op.clearTransfer();
                 transfer.clearFields();
             }
@@ -125,7 +121,8 @@ class ControlerOperational implements ActionListener, ControlerInterface, Observ
     }
 
     @Override
-    public void update() {
+    public void update(Observable o, Object arg) {
         op.jlblBalance.setText("$" + String.valueOf(customer.getBalance()));
     }
+
 }

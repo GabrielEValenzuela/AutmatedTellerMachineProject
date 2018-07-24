@@ -1,10 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'application'
-version = '1.0'
+version = '2.0.5'
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-mainClassName = 'main'
+mainClassName = "Main.mainAtm"
 
 repositories {
     mavenCentral()
@@ -15,6 +15,17 @@ dependencies {
     compile 'mysql:mysql-connector-java:8.0.11'
 }
 
-run {
-standardInput = System.in
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'rpi-sense-hat-lib',
+                'Implementation-Version': version,
+                'Main-Class': 'Main.mainAtm'
+    }
+    baseName = project.name
+    from { 
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    with jar
 }

@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package AtmMVC.model;
 
-/**
- *
- * @author gabriel
- */
-public class ATM{
-    
+public class ATM {
+
     private int id;
     private float selfBalance;
     private boolean enable;
-    private int MAXTRANSFER;
+    private int MAXTRANSFER = 10000;
 
     public int getMAXTRANSFER() {
         return MAXTRANSFER;
@@ -46,6 +37,6 @@ public class ATM{
 
     public void setEnable(boolean enable) {
         this.enable = enable;
-    }   
-    
+    }
+
 }

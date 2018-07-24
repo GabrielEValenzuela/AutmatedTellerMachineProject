@@ -1,23 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package AtmMVC.model;
 
+import java.util.Observable;
 
-/**
- *
- * @author gabriel
- */
-public class Customer implements Observer{
-    
+public class Customer extends Observable {
+
     private int customerId;
     private String firstName;
     private String lastName;
     private String email;
     private float balance;
     private String PIN;
+    private String bank;
     private boolean doubleCheck;
 
     public int getCustomerId() {
@@ -76,11 +69,16 @@ public class Customer implements Observer{
         this.doubleCheck = doubleCheck;
     }
 
-    @Override
-    public void update() {
-        
+    public String getBank() {
+        return bank.toUpperCase();
     }
-    
-    
-    
+
+    public void setBank(String bank) {
+        this.bank = bank;
+    }
+
+    public void change() {
+        notifyObservers();
+    }
+
 }
